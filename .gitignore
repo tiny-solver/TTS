@@ -170,3 +170,8 @@ depot/*
 coqui_recipes/*
 local_scripts/*
 coqui_demos/*
+tests/data/**/*.npy
+*.mkv
+*.m4a
+*.mp4
+*.mp3

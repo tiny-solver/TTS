@@ -8,7 +8,7 @@ from TTS.tts.layers.xtts.trainer.gpt_trainer import GPTArgs, GPTTrainer, GPTTrai
 from TTS.utils.manage import ModelManager
 
 # Logging parameters
-RUN_NAME = "GPT_XTTS_v2.0_ALBAAM_FT"
+RUN_NAME = "GPT_XTTS_v2.0_CGW_FT"
 PROJECT_NAME = "XTTS_trainer"
 DASHBOARD_LOGGER = "tensorboard"
 LOGGER_URI = None
@@ -19,8 +19,7 @@ OUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run", "trai
 # Training Parameters
 OPTIMIZER_WD_ONLY_ON_WEIGHTS = True  # for multi-gpu training please make it False
 START_WITH_EVAL = True  # if True it will star with evaluation
-# BATCH_SIZE = 3  # set here the batch size
-BATCH_SIZE = 10  # set here the batch size
+BATCH_SIZE = 3  # set here the batch size
 GRAD_ACUMM_STEPS = 84  # set here the grad accumulation steps
 # Note: we recommend that BATCH_SIZE * GRAD_ACUMM_STEPS need to be at least 252 for more efficient training. You can increase/decrease BATCH_SIZE but then set GRAD_ACUMM_STEPS accordingly.
 
@@ -73,8 +72,7 @@ if not os.path.isfile(TOKENIZER_FILE) or not os.path.isfile(XTTS_CHECKPOINT):
 
 # Training sentences generations
 SPEAKER_REFERENCE = [
-    # "/mnt/g/dataset/tts/choigawoon/wavs/audio17.wav"  # speaker reference to be used in training test sentences
-    "/home/choigawoon/tiny-solver/study/TTS/mywork/adele-tts-dataset/wavs/audio1.wav"
+    "/mnt/g/dataset/tts/choigawoon/wavs/audio17.wav"  # speaker reference to be used in training test sentences
 ]
 LANGUAGE = config_dataset.language
 
